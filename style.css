@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all, .4s;
+}
+
+body{
+    color: white;
+    background: #131313;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: background .4s; /* Añadimos la transición para el background */
+}
+
+.Body-red{
+    background: black;
+    background: linear-gradient(90deg, rgb(41, 0, 0) 74%, #00001a 84%);
+
+
+}
+.Body-Blue{
+    background: black;
+    background: linear-gradient(90deg, rgba(41,0,0,1) 16%, #00001a 26%);
+
+
+}
+h1{
+    font-size: 48px;
+    font-weight: 600;
+    text-align: center;
+    font-family: "Holtwood One SC", serif;
+    color: #6721eb;
+    font-weight: 400;
+    font-style: italic;
+    text-shadow: 5px 5px 5px rgb(0, 0, 0);
+}
+
+button {
+    position: absolute;
+    top: 30%;
+    width: 100px;
+    height: 55px;
+    background-color: #060606;
+    color: #4c00da;
+    font-size: 23px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-weight: 500;
+    border-radius: 50px;
+    border: 1px solid #242424;
+    opacity: 0;
+    z-index: 1;
+    transform: rotate(90deg);
+}
+.fade-in-up {
+    transition:opacity .3s, transform .3s, width .2s ;
+    transition-delay: 0s, 0s, .6s; /* Retrasa la segunda transición para que comience aquí de que termine la primera */
+    width: 300px;  
+    opacity: 1; /* Hacer visible */
+    cursor: pointer;
+    transform: rotate(0deg);
+    transform: translateY(-90px); /* Mover hacia arriba */
+}
+.tikTakToe {
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(3, 150px);
+    grid-gap: 15px;
+    margin: 10px;
+}
+
+.tikTakToi{
+    transform: translateY(60px);
+    transition: .4s;
+}
+
+.tikTok {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    font-size: 50px;
+    border: 1px solid rgba(54, 54, 54, 0.767);
+    background-color: #060606;
+    z-index: 99;
+}
+
+.tikTak {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    font-size: 40px;
+    border: 1px solid rgba(54, 54, 54, 0.767);
+    background-color: #060606;
+    z-index: 100;
+}
+.x{
+    background-color: transparent;
+    border: none;
+    transition: .2s;
+}
+
+.o{
+    width: 85%;
+    height: 85%;
+    border-radius: 50%;
+    margin: auto;
+    background-color: rgba(4, 0, 255, 0.39);
+    backdrop-filter: blur(0.5rem);
+    border: 1px solid rgba(250, 250, 250, 0.074);
+    transition: .4s;
+}
+
+.x::before,
+.x::after{
+    content: '';
+    position: absolute;
+    width: 170px;
+    height: 25px;
+    border-radius: 10PX;
+    background-color: rgba(255, 0, 0, 0.651);
+    backdrop-filter: blur(0.5rem);
+    border: 1px solid rgba(250, 250, 250, 0.074); 
+    transition: .4s;
+}
+.x::before,
+.x::after {
+  transform: rotate(45deg);
+}
+
+.x::after {
+  transform: rotate(-45deg);
+}
+
+.tikTak .x::before,
+.tikTak .x::after{
+  content: '';
+}
+
